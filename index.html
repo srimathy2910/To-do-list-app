@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="A responsive To-Do List application with task management and local storage.">
+    <meta name="author" content="SRIMATHY R">
+
+    <title>TaskFlow | To-Do List</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <h1>TaskFlow</h1>
+        <p>Organize your day, one task at a time.</p>
+    </header>
+
+    <main class="app-container">
+        <section class="todo-card" aria-labelledby="todo-heading">
+
+            <div class="card-heading">
+                <h2 id="todo-heading">My Tasks</h2>
+                <p id="task-summary" aria-live="polite">No tasks yet</p>
+            </div>
+
+            <form id="task-form">
+                <label for="task-input">Add a new task</label>
+
+                <div class="input-group">
+                    <input
+                        type="text"
+                        id="task-input"
+                        placeholder="What do you need to do?"
+                        maxlength="200"
+                        required
+                    >
+
+                    <button type="submit" id="submit-button">
+                        Add Task
+                    </button>
+                </div>
+            </form>
+
+            <div class="filters" role="group" aria-label="Filter tasks">
+                <button type="button" class="filter-btn active"
+                    data-filter="all" aria-pressed="true">
+                    All
+                </button>
+
+                <button type="button" class="filter-btn"
+                    data-filter="active" aria-pressed="false">
+                    Active
+                </button>
+
+                <button type="button" class="filter-btn"
+                    data-filter="completed" aria-pressed="false">
+                    Completed
+                </button>
+            </div>
+
+            <ul id="task-list" aria-label="Your tasks"></ul>
+
+            <p id="empty-message">No tasks to show. Add your first task!</p>
+
+            <div class="footer-actions">
+                <span id="remaining-count">0 tasks remaining</span>
+
+                <button type="button" id="clear-completed">
+                    Clear completed
+                </button>
+            </div>
+
+            <p id="status-message" class="status-message"
+                aria-live="polite"></p>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>TaskFlow &copy; 2026 | Built by SRIMATHY R</p>
+    </footer>
+</body>
+</html>
